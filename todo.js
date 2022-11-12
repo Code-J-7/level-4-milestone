@@ -9,17 +9,17 @@ const todoList = () => {
     
     const overdue = () => {
       return all.filter((item)=> {
-          return item.completed === false && item.dueDate <= yesterday
+          return item.completed === false && item.dueDate <= new Date().toLocaleDateString("en-CA")
       })
     }
     const dueToday = () => {
       return all.filter((item)=> {
-        return item.dueDate === today 
+        return item.dueDate === new Date().toLocaleDateString("en-CA") 
       })
     }
     const dueLater = () => {
       return all.filter((item)=> {
-        return item.dueDate >= tomorrow 
+        return item.dueDate >= new Date().toLocaleDateString("en-CA") 
       })
     }
     const toDisplayableList = (list) => {
